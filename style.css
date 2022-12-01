@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+}
+
+#page {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    height: 100%;
+    place-content: center;
+}
+#leftside {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    /* justify-items: center; */
+}
+
+
+@keyframes spin {
+    0% {
+        rotate: 0;
+    }
+    50% {
+        rotate: 180deg;
+    }
+    100% {
+        rotate: 360deg;
+    }
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#stats {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 20px;
+    margin: 20px;
+    color: wheat;
+    padding: 5%;
+}
+#kaka {
+    cursor:pointer;
+    /* transform: scale(.2); */
+    width: 50%;
+    --speed: 6000ms;
+    animation: pulse var(--speed) infinite, spin var(--speed) infinite linear, hover var(--speed) infinite;
+    margin: auto;
+    align-self: center;
+    image-rendering: pixelated;
+    display: block;
+}
+
+#rightside {
+    height: 100vh;
+}
+
+
+#store {
+    
+    height: 60%;
+    background-color: rgba(0, 0, 0, .6);
+    border-radius: 30px;
+    color: wheat;
+    padding: 40px;
+}
+
+.purchasable_item {
+    background-color: rgba(0, 0, 0, .7);
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 30px;
+    transition: all 100ms;
+    cursor:pointer;
+}
+
+.purchasable_item:hover {
+    transform: scale(1.01);
+    background-color: rgba(0, 0, 0, .65);
+}
+.activate_powerup {
+    /* display: none; */
+    animation: yourAnimation 1000ms ease-in-out;
+}
+
+
+@keyframes yourAnimation{
+    0% {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+    15% {
+        /* color: rgba(0, 0, 0, .6); */
+        background-color: rgba(255, 255, 255, 0.5);
+        transform:  translate(0px, -50px);
+    }
+    100% {
+        color: rgba(0, 0, 0, 0);
+        transform:  translate(0px, 150vh) rotate(-30deg);
+    }
+}

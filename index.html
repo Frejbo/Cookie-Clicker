@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Clicker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="cookie.js" defer></script>
+</head>
+<body>
+    <div id="page">
+        <div id="leftside">
+            <div id="stats">
+                <div>
+                    <h3>Cookies:</h3>
+                    <p id="cookie_amount">0</p>
+                </div>
+            </div>
+            <img id="kaka" src="Cookie.png" alt="Bild på kaka.">
+        </div>
+
+        <div id="rightside">
+            <div id="store">
+                <div class="purchasable_item" onClick="powerup_clicked(this)">
+                    <h3>Grandma</h3>
+                    <p>She bakes</p>
+                </div>
+                <div class="purchasable_item" onClick="powerup_clicked(this)">
+                    <h3>Nuclear Reactor</h3>
+                    <p>It spits out toxic cookies</p>
+                </div>
+                <div class="purchasable_item" onClick="powerup_clicked(this)">
+                    <h3>Erika</h3>
+                    <p>She has 100+ hours in Cookie Clicker</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

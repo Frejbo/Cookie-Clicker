@@ -2,6 +2,7 @@ let cookie = document.querySelector("#kaka");
 // let spinSpeed = 6000;
 let cookies = 0;
 let cookiesPerSecond = 0;
+update_status_labels(); // för att färgerna på priserna ska vara aktiva från början
 
 cookie.addEventListener("click", () => {
     // changeSpeed(spinSpeed-100);
@@ -13,7 +14,14 @@ cookie.addEventListener("click", () => {
 let animation = document.querySelector("kaka.animation");
 
 function powerup_clicked(item, cost, CPS) {
-    if (cost > cookies) { return; }
+    if (cost > cookies) {
+        // denied, spelaren har inte råd.
+        item.classList.add("purchase_denied");
+        item.addEventListener("animationend", () => {
+            item.classList.remove("purchase_denied");
+        })
+        return;
+    }
     cookies -= cost;
     cookiesPerSecond += CPS;
     update_status_labels();
@@ -42,6 +50,18 @@ function tick_cps() {
 }
 function update_status_labels() {
     document.querySelector("#cookie_amount").innerHTML = cookies;
+    let price_labels = document.querySelectorAll(".price");
+    for (let i = 0; i < price_labels.length; i++) {
+        let element = price_labels[i]
+        let cost = parseInt(element.querySelector("h2").innerHTML)//.replace("c", "")
+        if (cookies >= cost) {
+            // du har råd med denna powerup
+            element.style.backgroundColor = "rgba(0, 255, 0, .3)";
+        } else {
+            // du har INTE råd med denna powerup
+            element.style.backgroundColor = "rgba(255, 0, 0, .3)";
+        }
+    }
 }
 
 

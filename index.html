@@ -11,31 +11,31 @@
 <body>
     <div id="page">
         <div id="leftside">
-            <div id="stats">
+            <div id="stats" class="black_background">
                 <div>
                     <h3>Cookies:</h3>
                     <p id="cookie_amount">0</p>
                 </div>
             </div>
             <img id="kaka" src="Cookie.png" alt="Bild på kaka.">
-            <div id="CPS-progress-frame">
+            <div id="CPS-progress-frame" class="black_background">
                 <div id="CPS-progress"></div>
             </div>
         </div>
 
         <div id="rightside">
-            <div id="store">
-                <div class="purchasable_item" onClick="powerup_clicked(this, 10, 1)">
+            <div id="store" class="black_background">
+                <div class="purchasable_item" onClick="powerup_clicked(this)">
                     <div>
                         <h2>Grandma</h2>
                         <h3>She bakes ...a lot</h3>
                     </div>
                     <div class="price">
                         <h2>10C</h2>
-                        <h3>50C/S</h3>
+                        <h3>2C/S</h3>
                     </div>
                 </div>
-                <div class="purchasable_item" onClick="powerup_clicked(this, 30, 5)">
+                <div class="purchasable_item" onClick="powerup_clicked(this)">
                     <div>
                         <h2>Nuclear Reactor</h2>
                         <h3>It spits out toxic cookies</h3>
@@ -45,18 +45,37 @@
                         <h3>5C/S</h3>
                     </div>
                 </div>
-                <div class="purchasable_item" onClick="powerup_clicked(this, 100, 20)">
+                <div class="purchasable_item" onClick="powerup_clicked(this)">
                     <div>
                         <h2>Erika</h2>
                         <h3>She has 100+ hours in Cookie Clicker</h3>
                     </div>
                     <div class="price">
-                        <h2>100C</h2>
+                        <h2>150C</h2>
                         <h3>20C/S</h3>
                     </div>
                 </div>
+                <div class="purchasable_item" onClick="powerup_clicked(this)">
+                    <div>
+                        <h2>Sebastian</h2>
+                        <h3>He teach children to automate his baking</h3>
+                    </div>
+                    <div class="price">
+                        <h2>1000C</h2>
+                        <h3>30C/S</h3>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="text-align: center;">More items coming soon...</h3>
+                </div>
+            </div>
+
+            <div id="powerups" class="black_background">
+
             </div>
         </div>
     </div>
 </body>
 </html>
+<!-- ideer -->
+<!-- powerup: Elliot: increases Erikas speed by 200% -->

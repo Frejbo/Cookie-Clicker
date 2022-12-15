@@ -6,7 +6,7 @@
 body {
     height: 100vh;
     overflow: hidden;
-
+    background-color: black;
 }
 
 #page {
@@ -62,8 +62,6 @@ body {
 }
 
 #stats {
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 20px;
     margin: 20px;
     color: wheat;
     padding: 5%;
@@ -83,8 +81,6 @@ body {
 #CPS-progress-frame {
     width: 40%;
     height: 30px;
-    background-color: black;
-    border-radius: 10px;
     margin: auto;
     margin-top: 50px;
     padding: 5px;
@@ -92,7 +88,7 @@ body {
 }
 #CPS-progress {
     height: 100%;
-    border-radius: 5px;
+    border-radius: 20px;
     background-color: green;
 }
 .progress-CPS {
@@ -113,17 +109,33 @@ body {
 
 
 #store {
-    
-    /* height: 60%; */
-    background-color: rgba(0, 0, 0, .6);
-    border-radius: 30px;
+    height: 50%;
     color: wheat;
     padding: 40px;
-    /* overflow-y: scroll; */
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* detta fungerar bara i vissa webbläsare, därför finns en liten del där nere också som funkar för resten. */
+    scrollbar-width: none;
+}
+#store::-webkit-scrollbar {
+    display: none;
 }
 
+#powerups {
+    height: 30%;
+    width: 100%;
+}
+
+
+.black_background {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    border: 3px solid rgba(245, 222, 179, 0.6);
+}
+
+
+
 .purchasable_item {
-    background-color: rgba(0, 0, 0, .7);
+    background-color: rgba(255, 255, 255, 0.05);
     padding: 20px;
     margin-bottom: 30px;
     border-radius: 30px;
@@ -136,7 +148,7 @@ body {
 }
 .purchasable_item:hover {
     transform: scale(1.01);
-    background-color: rgba(0, 0, 0, .65);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 .price {
     padding: 10px;
@@ -147,7 +159,6 @@ body {
     /* display: none; */
     animation: purchase_item 1000ms ease-in-out;
 }
-
 
 @keyframes purchase_item {
     0% {

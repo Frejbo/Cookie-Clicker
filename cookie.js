@@ -13,7 +13,9 @@ cookie.addEventListener("click", () => {
 });
 let animation = document.querySelector("kaka.animation");
 
-function powerup_clicked(item, cost, CPS) {
+function powerup_clicked(item) {
+    let cost = parseInt(item.querySelector(".price h2").innerHTML)
+    let CPS = parseInt(item.querySelector(".price h3").innerHTML)
     if (cost > cookies) {
         // denied, spelaren har inte råd.
         item.classList.add("purchase_denied");

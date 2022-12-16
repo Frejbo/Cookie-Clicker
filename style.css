@@ -179,7 +179,7 @@ body {
     border-radius: 15px;
     background-color: rgba(255, 255, 255, .1);
 }
-.activate_powerup {
+.activate_character {
     /* display: none; */
     animation: purchase_item 1000ms ease-in-out;
 }
@@ -260,5 +260,8 @@ body {
     }
     #CPS-progress {
         border-radius: 5px;
+    }
+    #powerup_information_hoverview {
+        width: 200px;
     }
 }

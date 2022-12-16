@@ -8,12 +8,12 @@ cookie.addEventListener("click", () => {
     // changeSpeed(spinSpeed-100);
     cookies++;
     update_status_labels();
-
     // cookie.classList.toggle("clicked_cookie"); //funkade inte, tror det är för att den redan har en animation på sig. Fixar senare.
 });
 const animation = document.querySelector("kaka.animation");
 
-function powerup_clicked(item) {
+
+function character_clicked(item) {
     let cost = parseInt(item.querySelector(".price h2").innerHTML)
     let CPS = parseInt(item.querySelector(".price h3").innerHTML)
     if (cost > cookies) {
@@ -29,7 +29,7 @@ function powerup_clicked(item) {
     update_status_labels();
 
 
-    item.classList.add("activate_powerup")
+    item.classList.add("activate_character")
 
     item.addEventListener("animationend", () => {
         item.style.display = "none";
@@ -58,10 +58,10 @@ function update_status_labels() {
         let element = price_labels[i]
         let cost = parseInt(element.querySelector("h2").innerHTML)//.replace("c", "")
         if (cookies >= cost) {
-            // du har råd med denna powerup
+            // du har råd med denna character
             element.style.backgroundColor = "rgba(0, 255, 0, .3)";
         } else {
-            // du har INTE råd med denna powerup
+            // du har INTE råd med denna character
             element.style.backgroundColor = "rgba(255, 0, 0, .3)";
         }
     }
@@ -103,6 +103,30 @@ function hover_powerup(element, powerupName, powerupDescription) {
 }
 function hide_info() {
     informationsruta.style.display = "none";
+}
+
+
+
+function activate_powerup(element, name) {
+    let characters = document.querySelectorAll(".nameOfCharacter");
+    let unlockedCharacters = [];
+    for (let i = 0; i < characters.length; i++) {
+        if (characters[i].parentElement.parentElement.style.display != "none") {continue;} // om karaktären ej låsts upp
+        unlockedCharacters.push(characters[i].innerHTML);
+    }
+
+    // går igenom alla då alla har specifika syften:
+    if (name == "Elliot") {
+        if (!unlockedCharacters.includes("Erika")) {return;}
+        cookiesPerSecond += 10;
+    }
+    if (name == "Axel") {
+        if (!unlockedCharacters.includes("Saga")) {return;}
+        cookiesPerSecond -= 35;
+    }
+
+    element.style.display = "none";
+    update_status_labels();
 }
 
 

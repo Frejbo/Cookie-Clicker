@@ -29,9 +29,9 @@
 
         <!-- <div id="rightside"> -->
             <div id="store" class="black_background">
-                <div class="purchasable_item" onClick="powerup_clicked(this)">
+                <div class="purchasable_item" onClick="character_clicked(this)">
                     <div>
-                        <h2>Grandma</h2>
+                        <h2 class="nameOfCharacter">Grandma</h2>
                         <h3>She bakes ...a lot</h3>
                     </div>
                     <div class="price">
@@ -39,9 +39,9 @@
                         <h3>2C/S</h3>
                     </div>
                 </div>
-                <div class="purchasable_item" onClick="powerup_clicked(this)">
+                <div class="purchasable_item" onClick="character_clicked(this)">
                     <div>
-                        <h2>Nuclear Reactor</h2>
+                        <h2 class="nameOfCharacter">Nuclear Reactor</h2>
                         <h3>It spits out toxic cookies</h3>
                     </div>
                     <div class="price">
@@ -49,9 +49,9 @@
                         <h3>5C/S</h3>
                     </div>
                 </div>
-                <div class="purchasable_item" onClick="powerup_clicked(this)">
+                <div class="purchasable_item" onClick="character_clicked(this)">
                     <div>
-                        <h2>Erika</h2>
+                        <h2 class="nameOfCharacter">Erika</h2>
                         <h3>She has 100+ hours in Cookie Clicker</h3>
                     </div>
                     <div class="price">
@@ -59,9 +59,9 @@
                         <h3>20C/S</h3>
                     </div>
                 </div>
-                <div class="purchasable_item" onClick="powerup_clicked(this)">
+                <div class="purchasable_item" onClick="character_clicked(this)">
                     <div>
-                        <h2>Sebastian</h2>
+                        <h2 class="nameOfCharacter">Sebastian</h2>
                         <h3>He teach children to automate his baking</h3>
                     </div>
                     <div class="price">
@@ -69,13 +69,13 @@
                         <h3>30C/S</h3>
                     </div>
                 </div>
-                <div class="purchasable_item" onClick="powerup_clicked(this)">
+                <div class="purchasable_item" onClick="character_clicked(this)">
                     <div>
-                        <h2>Saga</h2>
+                        <h2 class="nameOfCharacter">Saga</h2>
                         <h3>She increases the heat in the oven</h3>
                     </div>
                     <div class="price">
-                        <h2>4000C</h2>
+                        <h2>3000C</h2>
                         <h3>70C/S</h3>
                     </div>
                 </div>
@@ -84,8 +84,8 @@
 
 
             <div id="powerups" class="black_background">
-                <img src="Assets/powerups/Elliot.webp" alt="Powerup logo: Elliot" class="powerup" onmousemove="hover_powerup(this, 'Elliot', 'Increases Erikas speed by 200%.')" onmouseleave="hide_info()">
-                <img src="Assets/powerups/Axel.webp" alt="Powerup logo: Axel" class="powerup" onmousemove="hover_powerup(this, 'Axel', 'Bullies Saga to produce 100% negative cookies. (-100% of Sagas CPS)')" onmouseleave="hide_info()">
+                <img src="Assets/powerups/Elliot.webp" alt="Powerup logo: Elliot" class="powerup" onmousemove="hover_powerup(this, 'Elliot', 'Increases Erikas speed by 200%.')" onmouseleave="hide_info()" onclick="activate_powerup(this, 'Elliot')">
+                <img src="Assets/powerups/Axel.webp" alt="Powerup logo: Axel" class="powerup" onmousemove="hover_powerup(this, 'Axel', 'Bullies Saga to produce 50% less cookies.')" onmouseleave="hide_info()" onclick="activate_powerup(this, 'Axel')">
                 
                 <div id="powerup_information_hoverview">
                     <img style="display: block;">

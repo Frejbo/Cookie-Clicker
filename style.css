@@ -68,6 +68,9 @@ body {
     justify-content: space-evenly;
 }
 #kaka {
+    user-select: none;
+    user-zoom: none;
+    -webkit-user-drag: none;
     cursor:pointer;
     min-width: 30vw;
     width: 60%;

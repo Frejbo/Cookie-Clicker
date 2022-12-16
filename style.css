@@ -5,7 +5,7 @@
 
 body {
     height: 100vh;
-    overflow: hidden;
+    /* overflow: hidden; */
     background-color: black;
 }
 
@@ -61,12 +61,15 @@ body {
 }
 
 #stats {
-    margin: 20px;
+    /* margin: 20px; */
     color: wheat;
     padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
 }
 #kaka {
     cursor:pointer;
+    min-width: 30vw;
     width: 60%;
     --speed: 6000ms;
     animation: pulse 6000ms infinite, spin 6000ms infinite linear, hover 6000ms infinite; /* använder inte --speed variabeln just nu då den får animationen att hacka till varje gång --speed ändras. */
@@ -75,7 +78,6 @@ body {
     image-rendering: pixelated;
     display: block;
     /* position: absolute; */
-    margin: auto;
 }
 #CPS-progress-frame {
     width: 40%;
@@ -109,6 +111,7 @@ body {
     overflow-y: scroll;
     -ms-overflow-style: none; /* detta fungerar bara i vissa webbläsare, därför finns en liten del där nere också som funkar för resten. */
     scrollbar-width: none;
+    min-height: 40vh;
 }
 #store::-webkit-scrollbar {
     display: none;
@@ -116,6 +119,7 @@ body {
 
 #powerups {
     grid-area: powerups;
+    min-height: 20vh;
 }
 .powerup {
     height: 48px;
@@ -148,6 +152,8 @@ body {
     border-radius: 30px;
     border: 3px solid rgba(245, 222, 179, 0.6);
     padding: 40px;
+    margin: 1%;
+
 }
 
 
@@ -210,5 +216,45 @@ body {
     }
     100% {
         transform: translate(0, 0);
+    }
+}
+
+
+@media (max-width: 800px) {
+    #stats {
+        flex-direction: column;
+    }
+    #CPS-progress-frame {
+        width: 60%;
+    }
+}
+@media (max-width: 600px) {
+    #page {
+        grid-template-areas:
+        'kaka'
+        'store'
+        'powerups';
+    }
+    #store {
+        min-height: 300px;
+    }
+}
+@media (max-width: 400px) {
+    #stats {
+        border-radius: 10px;
+    }
+    #store {
+        padding: 10px;
+        border-radius: 10px;
+    }
+    #powerups {
+        padding: 10px;
+        border-radius: 10px;
+    }
+    #CPS-progress-frame {
+        border-radius: 10px;
+    }
+    #CPS-progress {
+        border-radius: 5px;
     }
 }

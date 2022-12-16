@@ -200,21 +200,25 @@ body {
 }
 
 .purchase_denied {
-    animation: purchase_denied 200ms linear;
+    animation: purchase_denied 250ms linear;
 }
 @keyframes purchase_denied {
     10% {
-        background-color: rgba(50, 0, 0, .65);
-        transform: translate(20px, 0);
+        background-color: rgba(70, 0, 0, .65);
+        transform: translate(10px, 0);
+        transform: rotate(1deg);
     }
     35% {
-        transform: translate(-20px, 0);
+        transform: rotate(-2deg);
+        transform: translate(-10px, 0);
     }
     60% {
-        transform: translate(20px, 0);
+        transform: rotate(2deg);
+        transform: translate(10px, 0);
         background-color: rgba(0, 0, 0, .65);
     }
     100% {
+        transform: rotate(0deg);
         transform: translate(0, 0);
     }
 }

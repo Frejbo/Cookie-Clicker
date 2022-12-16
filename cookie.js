@@ -52,6 +52,7 @@ function tick_cps() {
 }
 function update_status_labels() {
     document.querySelector("#cookie_amount").innerHTML = cookies;
+    document.querySelector("#CPS_rate").innerHTML = cookiesPerSecond;
     let price_labels = document.querySelectorAll(".price");
     for (let i = 0; i < price_labels.length; i++) {
         let element = price_labels[i]

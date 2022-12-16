@@ -67,6 +67,36 @@ function update_status_labels() {
 }
 
 
+
+
+// powerups
+let powerups = document.querySelector(".powerup")
+// for (let i = 0; i < powerups.length; i++) {
+    // powerups[i].addEventListener("mousemove", () => {
+    //     hover_powerup(powerups[i])
+    // })
+// }
+let informationsruta = document.querySelector("#powerup_information_hoverview");
+function hover_powerup(element, powerupName, powerupDescription) {
+    informationsruta.style.display = "block";
+    let rect = informationsruta.getBoundingClientRect();
+    informationsruta.style.left = event.clientX + 'px';
+    informationsruta.style.top = event.clientY + 'px';
+
+    informationsruta.querySelector("img").src = element.src;
+    informationsruta.querySelector("img").alt = element.alt;
+
+    informationsruta.querySelector("h4").innerHTML = powerupName;
+    informationsruta.querySelector("p").innerHTML = powerupDescription;
+
+    informationsruta.style.display = "flex";
+}
+function hide_info() {
+    informationsruta.style.display = "none";
+}
+
+
+
 // cookie.addEventListener("animationiteration", () => {
 //     cookie.setAttribute("style", `--speed: ${(Math.floor(spinSpeed)) + "ms"}`);
 // })

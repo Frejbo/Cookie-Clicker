@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id="page">
-        <div id="leftside">
+        <div style="grid-area: kaka;">
             <div id="stats" class="black_background">
                 <div>
                     <h3>Cookies:</h3>
@@ -23,7 +23,7 @@
             </div>
         </div>
 
-        <div id="rightside">
+        <!-- <div id="rightside"> -->
             <div id="store" class="black_background">
                 <div class="purchasable_item" onClick="powerup_clicked(this)">
                     <div>
@@ -65,16 +65,34 @@
                         <h3>30C/S</h3>
                     </div>
                 </div>
-                <div>
-                    <h3 style="text-align: center;">More items coming soon...</h3>
+                <div class="purchasable_item" onClick="powerup_clicked(this)">
+                    <div>
+                        <h2>Saga</h2>
+                        <h3>She increases the heat in the oven</h3>
+                    </div>
+                    <div class="price">
+                        <h2>4000C</h2>
+                        <h3>70C/S</h3>
+                    </div>
                 </div>
+                <h3 style="text-align: center;">More items coming soon...</h3>
             </div>
+
 
             <div id="powerups" class="black_background">
-
+                <img src="Assets/powerups/Elliot.webp" alt="Powerup logo: Elliot" class="powerup" onmousemove="hover_powerup(this, 'Elliot', 'Increases Erikas speed by 200%.')" onmouseleave="hide_info()">
+                
+                <div id="powerup_information_hoverview">
+                    <img src="Assets/powerups/Elliot.webp" style="display: block;">
+                    <div style="display: block;">
+                        <h4>hej</h4>
+                        <p>hej</p>
+                    </div>
+                </div>
             </div>
-        </div>
     </div>
+
+
 </body>
 </html>
 <!-- ideer -->

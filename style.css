@@ -11,12 +11,11 @@ body {
 
 #page {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+    'kaka store' 
+    'kaka powerups';
     height: 100vh;
     /* place-content: center; */
-}
-#leftside {
-
 }
 
 
@@ -64,7 +63,7 @@ body {
 #stats {
     margin: 20px;
     color: wheat;
-    padding: 5%;
+    padding: 20px;
 }
 #kaka {
     cursor:pointer;
@@ -103,15 +102,10 @@ body {
     }
 }
 
-#rightside {
-    /* height: 100vh; */
-}
-
 
 #store {
-    height: 50%;
+    grid-area: store;
     color: wheat;
-    padding: 40px;
     overflow-y: scroll;
     -ms-overflow-style: none; /* detta fungerar bara i vissa webbläsare, därför finns en liten del där nere också som funkar för resten. */
     scrollbar-width: none;
@@ -121,8 +115,29 @@ body {
 }
 
 #powerups {
-    height: 30%;
-    width: 100%;
+    grid-area: powerups;
+}
+.powerup {
+    height: 32px;
+    image-rendering: pixelated;
+    cursor: pointer;
+}
+#powerup_information_hoverview {
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 7px;
+    background-color: #663931;
+    pointer-events: none;
+    color: wheat;
+    display: none;
+}
+#powerup_information_hoverview img {
+    image-rendering: pixelated;
+    height: 50px;
+    width: fit-content;
+    margin-right: 10px;
 }
 
 
@@ -130,6 +145,7 @@ body {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 30px;
     border: 3px solid rgba(245, 222, 179, 0.6);
+    padding: 40px;
 }
 
 

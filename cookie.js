@@ -120,9 +120,13 @@ function activate_powerup(element, name) {
         if (!unlockedCharacters.includes("Erika")) {return;}
         cookiesPerSecond += 10;
     }
-    if (name == "Axel") {
+    else if (name == "Axel") {
         if (!unlockedCharacters.includes("Saga")) {return;}
         cookiesPerSecond -= 35;
+    }
+    else if (name == "Barn") {
+        if (!unlockedCharacters.includes("Sebastian")) {return;}
+        cookiesPerSecond += 30;
     }
 
     element.style.display = "none";

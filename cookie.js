@@ -1,6 +1,6 @@
 const cookie = document.querySelector("#kaka");
 // let spinSpeed = 6000;
-let cookies = 0;
+let cookies = 150;
 let cookiesPerSecond = 0;
 update_status_labels(); // för att färgerna på priserna ska vara aktiva från början
 
@@ -74,13 +74,15 @@ function update_status_labels() {
 const powerups = document.querySelector(".powerup")
 const informationsruta = document.querySelector("#powerup_information_hoverview");
 
-function hover_powerup(element, powerupName, powerupDescription) {
+function hover_powerup(element, powerupName, powerupDescription, cost) {
     
     informationsruta.querySelector("img").src = element.src;
     informationsruta.querySelector("img").alt = element.alt;
     
     informationsruta.querySelector("h4").innerHTML = powerupName;
     informationsruta.querySelector("p").innerHTML = powerupDescription;
+
+    informationsruta.querySelector("#cost").innerHTML = ">> Costs "+cost+" cookies <<";
     
     informationsruta.style.display = "block";
     informationsruta.style.display = "flex";
@@ -106,8 +108,11 @@ function hide_info() {
 }
 
 
+// let unlockedPowerups = {};
+function activate_powerup(element, name, cost) {
+    if (cookies < cost) {return;}
+    cookies -= cost;
 
-function activate_powerup(element, name) {
     let characters = document.querySelectorAll(".nameOfCharacter");
     let unlockedCharacters = [];
     for (let i = 0; i < characters.length; i++) {
@@ -119,14 +124,24 @@ function activate_powerup(element, name) {
     if (name == "Elliot") {
         if (!unlockedCharacters.includes("Erika")) {return;}
         cookiesPerSecond += 10;
+        // unlockedPowerups["Elliot"] = element;
     }
     else if (name == "Axel") {
         if (!unlockedCharacters.includes("Saga")) {return;}
         cookiesPerSecond -= 35;
+        // unlockedPowerups["Axel"] = element;
+        document.querySelector("#Loke").style.display = "block";
     }
     else if (name == "Barn") {
         if (!unlockedCharacters.includes("Sebastian")) {return;}
         cookiesPerSecond += 30;
+        // unlockedPowerups["Barn"] = element;
+    }
+    else if (name == "Loke") {
+        // if (!unlockedPowerups["Axel"]) {return;}
+        cookiesPerSecond += 35;
+        // unlockedPowerups["Loke"] = element;
+        document.querySelector("#Axel").style.display = "block";
     }
 
     element.style.display = "none";

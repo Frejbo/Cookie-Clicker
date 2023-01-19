@@ -85,15 +85,17 @@
 
 
             <div id="powerups" class="black_background">
-                <img src="Assets/powerups/Elliot.webp" alt="Powerup logo: Elliot" class="powerup" onmousemove="hover_powerup(this, 'Elliot', 'Increases Erikas speed by 200%.', 1500)" onmouseleave="hide_info()" onclick="activate_powerup(this, 'Elliot')">
-                <img src="Assets/powerups/Axel.webp" alt="Powerup logo: Axel" class="powerup" onmousemove="hover_powerup(this, 'Axel', 'Bullies Saga to produce 50% less cookies.', null)" onmouseleave="hide_info()" onclick="activate_powerup(this, 'Axel')">
-                <img src="Assets/powerups/Barn.webp" alt="Powerup logo: Barn" class="powerup" onmousemove="hover_powerup(this, 'Barn', 'Give Sebastian more students to increase speed by 200%.', 3000)" onmouseleave="hide_info()" onclick="activate_powerup(this, 'Barn')">
+                <img src="Assets/powerups/Elliot.webp" alt="Powerup logo: Elliot" class="powerup" onmousemove="hover_powerup(this, 'Elliot', 'Increases Erikas speed by 200%.', 1500)" onmouseleave="hide_info()" onclick="activate_powerup(this, 'Elliot', 1500)">
+                <img src="Assets/powerups/Axel.webp" alt="Powerup logo: Axel" class="powerup" onmousemove="hover_powerup(this, 'Axel', 'Bullies Saga to produce 50% less cookies.', 2000)" onmouseleave="hide_info()" onclick="activate_powerup(this, 'Axel', 2000)" id="Axel">
+                <img src="Assets/powerups/Barn.webp" alt="Powerup logo: Barn" class="powerup" onmousemove="hover_powerup(this, 'Barn', 'Give Sebastian more students to increase speed by 200%.', 3000)" onmouseleave="hide_info()" onclick="activate_powerup(this, 'Barn', 3000)">
+                <img src="Assets/powerups/Loke.webp" alt="Powerup logo: Loke" class="powerup" onmousemove="hover_powerup(this, 'Loke', 'Kicks Axel out of the house in order to resume Sagas speed.', 10000)" onmouseleave="hide_info()" onclick="activate_powerup(this, 'Loke', 10000)" style="display: none;" id="Loke">
                 
                 <div id="powerup_information_hoverview">
                     <img style="display: block;">
                     <div style="display: block;">
                         <h4>Titel</h4>
                         <p>Beskrivning</p>
+                        <p id="cost">Kostnad</p>
                     </div>
                 </div>
             </div>

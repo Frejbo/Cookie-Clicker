@@ -1,6 +1,6 @@
 const cookie = document.querySelector("#kaka");
 // let spinSpeed = 6000;
-let cookies = 150;
+let cookies = 0;
 let cookiesPerSecond = 0;
 update_status_labels(); // för att färgerna på priserna ska vara aktiva från början
 

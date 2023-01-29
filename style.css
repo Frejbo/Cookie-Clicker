@@ -70,6 +70,7 @@ body {
 #kaka {
     user-select: none;
     user-zoom: none;
+    touch-action: manipulation;
     -webkit-user-drag: none;
     cursor:pointer;
     min-width: 30vw;
